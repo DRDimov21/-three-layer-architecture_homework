@@ -20,6 +20,7 @@ void writeUsersToFile(const vector<User>& users);
 int main() {
     vector<User> users = readUsersFromFile();
     int choice;
+    bool flag = false;
 
     do {
         displayMenu();
@@ -64,6 +65,11 @@ int main() {
             break;
         default:
             cout << "Invalid choice. Please try again.\n";
+            flag = true;
+        }
+        if (flag)
+        {
+            break;
         }
     } while (choice != 3);
 
